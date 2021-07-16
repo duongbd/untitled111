@@ -11,11 +11,16 @@
     <title>Home</title>
 </head>
 <body>
-<h1>Email Validate</h1>
+<h1>Sandwich Condiments</h1>
 <h3 style="color: red">${message}</h3>
-<form action="/validate" method="post">
-    <input type="text" name="email"><br>
-    <input type="submit" value="Validate">
+<form action="/postCondiments" method="post">
+    <input type="checkbox" id="condiments1" name="condiments" value="Lettuce">
+    <label for="condiments1"> Lettuce</label><br>
+    <input type="checkbox" id="condiments2" name="condiments" value="Tomato">
+    <label for="condiments1"> Tomato</label><br>
+    <input type="checkbox" id="condiments3" name="condiments" value="Mustard">
+    <label for="condiments3"> Mustard</label><br>
+    <input type="submit" value="submit">
 </form>
 
 </body>

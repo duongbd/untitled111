@@ -6,35 +6,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.List;
 
 @Controller
 public class HomeController {
-    private static final String EMAIL_REGEX="^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
-    private static Pattern pattern;
-    private static Matcher matcher;
-    public HomeController(){
-        pattern=Pattern.compile(EMAIL_REGEX);
-    }
-    @GetMapping(value = "/")
+    @GetMapping
     public String home(){
         return "home";
     }
-    @PostMapping(value = "/validate")
-    public String user(@RequestParam("email") String email, ModelMap modelMap){
-        boolean isValid=this.validate(email);
-        if (!isValid){
-            modelMap.addAttribute("message","Email is invalid");
+    @PostMapping(value = "/postCondiments")
+    public String postCondiments(@RequestParam(value = "condiments", required = false) List<String> listCondiment, ModelMap modelMap){
+        if (listCondiment==null){
+            modelMap.addAttribute("message","No condiment be chose");
             return "home";
         }
-        modelMap.addAttribute("email",email);
+        modelMap.addAttribute("list", listCondiment);
         return "success";
-    }
-
-    private boolean validate(String regex) {
-        matcher= pattern.matcher(regex);
-        return matcher.matches();
     }
 }
 
