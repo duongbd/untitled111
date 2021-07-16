@@ -11,7 +11,7 @@
     <title>Home</title>
 </head>
 <body>
-<h1>Sandwich Condiments</h1>
+<h1>Calculator</h1>
 <h3 style="color: red">${message}</h3>
 <form>
     <input type="text"  name="number1" placeholder="0" value=${number1}>
