@@ -13,15 +13,15 @@
 <body>
 <h1>Sandwich Condiments</h1>
 <h3 style="color: red">${message}</h3>
-<form action="/postCondiments" method="post">
-    <input type="checkbox" id="condiments1" name="condiments" value="Lettuce">
-    <label for="condiments1"> Lettuce</label><br>
-    <input type="checkbox" id="condiments2" name="condiments" value="Tomato">
-    <label for="condiments1"> Tomato</label><br>
-    <input type="checkbox" id="condiments3" name="condiments" value="Mustard">
-    <label for="condiments3"> Mustard</label><br>
-    <input type="submit" value="submit">
+<form>
+    <input type="text"  name="number1" placeholder="0" value=${number1}>
+    <input type="text"  name="number2" placeholder="0" value=${number2}>
+    <br> <br>
+    <input type="submit" value="+" formaction="/add" formmethod="post" >
+    <input type="submit" value="-" formaction="/sub" formmethod="post" >
+    <input type="submit" value="*" formaction="/mul" formmethod="post" >
+    <input type="submit" value="/" formaction="/div" formmethod="post" >
 </form>
-
+<h3>Result: </h3><p>${result}</p>
 </body>
 </html>
