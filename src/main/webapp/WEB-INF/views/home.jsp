@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
     <title>Home</title>
@@ -13,15 +14,25 @@
 <body>
 <h1>Sandwich Condiments</h1>
 <h3 style="color: red">${message}</h3>
-<form action="/postCondiments" method="post">
-    <input type="checkbox" id="condiments1" name="condiments" value="Lettuce">
-    <label for="condiments1"> Lettuce</label><br>
-    <input type="checkbox" id="condiments2" name="condiments" value="Tomato">
-    <label for="condiments1"> Tomato</label><br>
-    <input type="checkbox" id="condiments3" name="condiments" value="Mustard">
-    <label for="condiments3"> Mustard</label><br>
-    <input type="submit" value="submit">
-</form>
+<form:form action="/addEmployee" method="post" modelAttribute="employee">
+    <table>
+        <tr>
+            <td><form:label path="id">Employee ID: </form:label></td>
+            <td><form:input path="id"/></td>
+        </tr>
+        <tr>
+            <td><form:label path="name">Employee's name: </form:label></td>
+            <td><form:input path="name"/></td>
+        </tr>
+        <tr>
+            <td><form:label path="contactNumber">Contact's number: </form:label></td>
+            <td><form:input path="contactNumber"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form:form>
 
 </body>
 </html>

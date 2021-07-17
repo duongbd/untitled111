@@ -13,13 +13,20 @@
     <title>Success</title>
 </head>
 <body>
-<h3>List Condiments:</h3>
-<ol>
-    <c:forEach var="emp" items="${list}">
-
-        <li>${emp}</li>
-
-    </c:forEach>
-</ol>
+<h2>Submitted Employee Information</h2>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td>${name}</td>
+    </tr>
+    <tr>
+        <td>ID:</td>
+        <td>${id}</td>
+    </tr>
+    <tr>
+        <td>Contact Number:</td>
+        <td>${contactNumber}</td>
+    </tr>
+</table>
 </body>
 </html>
