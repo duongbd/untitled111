@@ -6,22 +6,33 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Home</title>
 </head>
 <body>
-<h1>Sandwich Condiments</h1>
-<h3 style="color: red">${message}</h3>
-<form action="/postCondiments" method="post">
-    <input type="checkbox" id="condiments1" name="condiments" value="Lettuce">
-    <label for="condiments1"> Lettuce</label><br>
-    <input type="checkbox" id="condiments2" name="condiments" value="Tomato">
-    <label for="condiments1"> Tomato</label><br>
-    <input type="checkbox" id="condiments3" name="condiments" value="Mustard">
-    <label for="condiments3"> Mustard</label><br>
-    <input type="submit" value="submit">
-</form>
-
+<h3>Home</h3>
+<form:form action="login" method="post" modelAttribute="login">
+    <fieldset>
+        <legend>Login</legend>
+        <table>
+            <tr>
+                <td><form:label path="account">Account:</form:label></td>
+                <td><form:input path="account"  /></td>
+            </tr>
+            <tr>
+                <td><form:label path="password">Password:</form:label></td>
+                <td><form:input type="password" path="password"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><form:button>Login</form:button></td>
+            </tr>
+        </table>
+    </fieldset>
+</form:form>
+<h3>${message}</h3>
 </body>
 </html>

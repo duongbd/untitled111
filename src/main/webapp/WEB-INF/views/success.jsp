@@ -13,13 +13,6 @@
     <title>Success</title>
 </head>
 <body>
-<h3>List Condiments:</h3>
-<ol>
-    <c:forEach var="emp" items="${list}">
-
-        <li>${emp}</li>
-
-    </c:forEach>
-</ol>
+<h3>${message}</h3>
 </body>
 </html>
