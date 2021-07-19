@@ -18,7 +18,7 @@
     <table>
         <tr>
             <td><label>Select a file to upload</label></td>
-            <td><input type="file" name="file" accept="image/jpeg,image/png"/></td>
+            <td><input type="file" name="file" accept="image/jpeg,image/png" multiple/></td>
         </tr>
         <tr>
             <td><input type="submit" value="Submit"/></td>
