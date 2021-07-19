@@ -14,25 +14,16 @@
 </head>
 <body>
 <h3>Home</h3>
-<form:form action="login" method="post" modelAttribute="login">
-    <fieldset>
-        <legend>Login</legend>
-        <table>
-            <tr>
-                <td><form:label path="account">Account:</form:label></td>
-                <td><form:input path="account"  /></td>
-            </tr>
-            <tr>
-                <td><form:label path="password">Password:</form:label></td>
-                <td><form:input type="password" path="password"/></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><form:button>Login</form:button></td>
-            </tr>
-        </table>
-    </fieldset>
+<form:form method="POST" action="/uploadFile" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><label>Select a file to upload</label></td>
+            <td><input type="file" name="file" accept="image/jpeg,image/png"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
 </form:form>
-<h3>${message}</h3>
 </body>
 </html>
